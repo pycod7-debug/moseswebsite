@@ -42,6 +42,9 @@
             padding-left: 1.5rem;
         }
 
+        .badge-container svg { transition: transform 0.3s ease; }
+        .badge-container:hover svg { transform: scale(1.1) rotate(-2deg); }
+
         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
     </style>
 </head>
@@ -140,42 +143,44 @@
         </section>
 
         <section id="about" class="page max-w-4xl mx-auto">
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-        <div class="bg-slate-50 py-12 flex justify-center border-b border-slate-100">
-            <svg width="120" height="150" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 10C10 10 10 90 50 110C90 90 90 10 90 10H10Z" fill="#800000" stroke="#c5a059" stroke-width="4"/>
-                <path d="M30 65C30 65 35 60 45 60C55 60 70 65 70 65M70 65L75 70M70 65L75 60M35 50C35 50 32 40 40 35C48 30 55 35 55 35M40 35L38 30M40 35L45 32M55 75C55 75 60 85 50 90C40 95 35 85 35 85" stroke="#c5a059" stroke-width="3" stroke-linecap="round"/>
-                <circle cx="50" cy="50" r="15" stroke="#c5a059" stroke-width="2" fill="none"/>
-                <path d="M25 25H75M25 35H75" stroke="#c5a059" stroke-width="1" opacity="0.3"/>
-            </svg>
-        </div>
-
-        <div class="p-12 text-center">
-            <h2 class="budo-title text-4xl mb-6 uppercase">About Us</h2>
-            <div class="w-16 h-1 bg-[#c5a059] mx-auto mb-8 rounded-full"></div>
-            
-            <div class="space-y-6 text-slate-600 leading-relaxed text-left">
-                <p>
-                    Founded in 1906, <strong>King's College Budo</strong> stands as a beacon of academic excellence and leadership in East Africa. For over a century, we have nurtured minds that have gone on to shape the political, social, and economic landscape of the region.
-                </p>
-                <p>
-                    Our philosophy is rooted in <strong>holistic education</strong>. We don't just teach; we groom. Through a rigorous balance of world-class academics, spiritual guidance in our historic Chapel, and competitive sports, we ensure that every student who walks through our gates emerges as a well-rounded citizen ready to lead.
-                </p>
-                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-[#800000] italic">
-                    "Sicut Quercus" — As the Oak grows, so we grow. This motto reflects our commitment to steady, deep-rooted growth and the strength of character we instill in our learners.
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div class="bg-slate-50 py-16 flex flex-col items-center justify-center border-b border-slate-100 badge-container">
+                    <svg width="140" height="160" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                                <feOffset dx="1" dy="1" result="offsetblur" />
+                                <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+                                <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M50 115C15 95 5 75 5 10V5H95V10C95 75 85 95 50 115Z" fill="#800000" stroke="#c5a059" stroke-width="3"/>
+                        <path d="M50 108C20 90 12 72 12 12V12H88V12C88 72 80 90 50 108Z" fill="none" stroke="#c5a059" stroke-width="1" opacity="0.4"/>
+                        <path d="M35 80C35 80 32 75 32 70C32 65 35 60 40 58C40 58 35 55 35 50C35 45 40 40 50 40C60 40 65 45 65 50C65 55 60 58 60 58C65 60 68 65 68 70C68 75 65 80 65 80M32 70H68" stroke="#c5a059" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#shadow)"/>
+                        <circle cx="50" cy="25" r="8" fill="none" stroke="#c5a059" stroke-width="2"/>
+                        <path d="M50 15V18M40 18L42 21M60 18L58 21" stroke="#c5a059" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <p class="mt-4 gold-label text-[10px]">Since 1906</p>
                 </div>
-                <p>
-                    With a community of nearly 2,800 students, our challenges are significant, but our resolve is stronger. This online donation platform serves as a modern bridge, connecting our global network of alumni, parents, and well-wishers back to the Hill.
-                </p>
-            </div>
+                
+                <div class="p-12 text-center">
+                    <h2 class="budo-title text-4xl mb-6 uppercase">About Us</h2>
+                    <div class="w-16 h-1 bg-[#c5a059] mx-auto mb-8 rounded-full"></div>
+                    
+                    <div class="space-y-6 text-slate-600 leading-relaxed text-left">
+                        <p>Founded in 1906, <strong>King's College Budo</strong> stands as a beacon of academic excellence and leadership in East Africa. For over a century, we have nurtured minds that have gone on to shape the political, social, and economic landscape of the region.</p>
+                        <p>Our philosophy is rooted in <strong>holistic education</strong>. Through a balance of world-class academics, spiritual guidance in our historic Chapel, and competitive sports, we ensure every student emerges as a well-rounded citizen ready to lead.</p>
+                        <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-[#800000] italic">
+                            "Sicut Quercus" — As the Oak grows, so we grow. This motto reflects our commitment to steady, deep-rooted growth.
+                        </div>
+                    </div>
 
-            <div class="mt-12 flex flex-wrap gap-4 justify-center">
-                <button onclick="navigateTo('home')" class="bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-black transition shadow-lg shadow-maroon/20">Support the Hill</button>
-                <button onclick="navigateTo('details')" class="bg-slate-100 text-slate-800 px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-slate-200 transition">View Fund Projects</button>
+                    <div class="mt-12 flex flex-wrap gap-4 justify-center">
+                        <button onclick="navigateTo('home')" class="bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-black transition">Support the Hill</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="details" class="page max-w-3xl mx-auto">
             <div class="bg-white p-12 rounded-3xl shadow-xl">
@@ -183,17 +188,15 @@
                 <div class="space-y-8">
                     <div id="desc-fees" class="desc-block p-4">
                         <h3 class="font-bold text-[#800000] uppercase text-xs tracking-widest mb-3">Student Fees & Financial Hardship</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Financial hardship affects many students and can negatively impact their academic performance and mental well-being. In a large community of 2,800 students, some learners inevitably face stress and social isolation due to unpaid fees. This platform allows alumni and well-wishers to provide direct support, reducing the pressure on the student body.</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Financial hardship affects many students and can negatively impact performance and well-being. This platform allows alumni and well-wishers to provide direct support, such as the UGX 2,750,000 required for Senior Four students.</p>
                     </div>
-
                     <div id="desc-sports" class="desc-block p-4">
                         <h3 class="font-bold text-[#800000] uppercase text-xs tracking-widest mb-3">Sports Development</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Successful sports programs require resources like equipment, professional coaching, and transportation. Contributions to this fund empower our athletes to train effectively and compete at the highest levels without the burden of raising the capital themselves.</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Successful sports programs require resources like equipment and coaching. Contributions empower our athletes to train effectively without the burden of raising capital themselves.</p>
                     </div>
-
                     <div id="desc-chapel" class="desc-block p-4">
                         <h3 class="font-bold text-[#800000] uppercase text-xs tracking-widest mb-3">The Chapel Project</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Infrastructure development is vital for our spiritual and academic growth. The existing chapel accommodates fewer than 1,000 people for a school of 2,800. This platform enables continuous giving to bridge the funding gap for our new house of worship.</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Infrastructure development is vital for spiritual growth. The existing chapel accommodates fewer than 1,000 people. This platform enables giving toward the fifteen billion shilling target for the new chapel.</p>
                     </div>
                 </div>
             </div>
