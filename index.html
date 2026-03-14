@@ -42,9 +42,6 @@
             padding-left: 1.5rem;
         }
 
-        .badge-container svg { transition: transform 0.3s ease; }
-        .badge-container:hover svg { transform: scale(1.1) rotate(-2deg); }
-
         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
     </style>
 </head>
@@ -144,23 +141,11 @@
 
         <section id="about" class="page max-w-4xl mx-auto">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-                <div class="bg-slate-50 py-16 flex flex-col items-center justify-center border-b border-slate-100 badge-container">
-                    <svg width="140" height="160" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
-                                <feOffset dx="1" dy="1" result="offsetblur" />
-                                <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
-                                <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
-                            </filter>
-                        </defs>
-                        <path d="M50 115C15 95 5 75 5 10V5H95V10C95 75 85 95 50 115Z" fill="#800000" stroke="#c5a059" stroke-width="3"/>
-                        <path d="M50 108C20 90 12 72 12 12V12H88V12C88 72 80 90 50 108Z" fill="none" stroke="#c5a059" stroke-width="1" opacity="0.4"/>
-                        <path d="M35 80C35 80 32 75 32 70C32 65 35 60 40 58C40 58 35 55 35 50C35 45 40 40 50 40C60 40 65 45 65 50C65 55 60 58 60 58C65 60 68 65 68 70C68 75 65 80 65 80M32 70H68" stroke="#c5a059" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#shadow)"/>
-                        <circle cx="50" cy="25" r="8" fill="none" stroke="#c5a059" stroke-width="2"/>
-                        <path d="M50 15V18M40 18L42 21M60 18L58 21" stroke="#c5a059" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                    <p class="mt-4 gold-label text-[10px]">Since 1906</p>
+                <div class="bg-slate-50 py-16 flex flex-col items-center justify-center border-b border-slate-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/King%27s_College_Budo_Coat_of_Arms.png" 
+                         alt="King's College Budo Badge" 
+                         class="w-32 h-auto drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                    <p class="mt-6 gold-label text-[10px]">Founded 1906</p>
                 </div>
                 
                 <div class="p-12 text-center">
@@ -170,13 +155,18 @@
                     <div class="space-y-6 text-slate-600 leading-relaxed text-left">
                         <p>Founded in 1906, <strong>King's College Budo</strong> stands as a beacon of academic excellence and leadership in East Africa. For over a century, we have nurtured minds that have gone on to shape the political, social, and economic landscape of the region.</p>
                         <p>Our philosophy is rooted in <strong>holistic education</strong>. Through a balance of world-class academics, spiritual guidance in our historic Chapel, and competitive sports, we ensure every student emerges as a well-rounded citizen ready to lead.</p>
-                        <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-[#800000] italic">
-                            "Gakyali Mabaga" — It is still the beginning. This motto reflects our commitment to continuous effort and the understanding that there is always more to achieve.
+                        
+                        <div class="bg-slate-50 p-8 rounded-2xl border-l-4 border-[#800000] shadow-sm">
+                            <p class="budo-title text-xl mb-1 italic">"Gakyali Mabaga"</p>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-widest">— It is still the beginning —</p>
+                            <p class="mt-3 text-sm italic">This motto serves as a constant reminder that no matter our achievements, there is always more to learn, more to build, and more to contribute to our community.</p>
                         </div>
+
+                        <p>With a community of nearly 2,800 students, our challenges are significant, but our resolve is stronger. This online donation platform serves as a modern bridge, connecting our global network back to the Hill.</p>
                     </div>
 
                     <div class="mt-12 flex flex-wrap gap-4 justify-center">
-                        <button onclick="navigateTo('home')" class="bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-black transition">Support the Hill</button>
+                        <button onclick="navigateTo('home')" class="bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-black transition shadow-lg shadow-maroon/20">Support the Hill</button>
                     </div>
                 </div>
             </div>
