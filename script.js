@@ -1,5 +1,8 @@
 let selectedFund = "";
 
+/**
+ * Navigation Logic
+ */
 function navigateTo(pageId, highlightId = null) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const target = document.getElementById(pageId);
@@ -21,12 +24,18 @@ function navigateTo(pageId, highlightId = null) {
     if (!highlightId) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/**
+ * UI Interaction
+ */
 function selectFund(name, element) {
     selectedFund = name;
     document.querySelectorAll('.fund-card').forEach(card => card.classList.remove('active'));
     element.classList.add('active');
 }
 
+/**
+ * Simulated Payment & Internal Redirect
+ */
 async function handlePayment() {
     const amount = document.getElementById('amtInput').value;
     const btn = document.getElementById('payBtn');
@@ -50,18 +59,18 @@ async function handlePayment() {
         Processing...
     `;
 
-    // Simulated Processing Time
+    // Simulate internal verification delay
     await new Promise(r => setTimeout(r, 2000));
 
-    // Fill Receipt
+    // Update internal Receipt details
     document.getElementById('receipt-fund').innerText = selectedFund;
     document.getElementById('receipt-amount').innerText = Number(amount).toLocaleString();
     document.getElementById('receipt-id').innerText = "#BD-" + Math.floor(1000 + Math.random() * 9000);
 
-    // Internal "Redirect"
+    // Show Thank You page
     navigateTo('thank-you');
 
-    // Cleanup
+    // Reset UI
     btn.disabled = false;
     btn.innerHTML = originalText;
     document.getElementById('amtInput').value = "";
